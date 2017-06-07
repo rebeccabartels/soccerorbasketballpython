@@ -1,0 +1,44 @@
+stage.set_background("houseinterior")
+
+sprite = codesters.Sprite("person1")
+
+sprite.go_to(0, -125)
+
+sprite.say("Hi! I'm Alex!")
+
+stage.wait(1)
+
+user_name = sprite.ask("What's your name?")
+
+sprite.say(user_name)
+
+stage.wait(2)
+
+sprite.say("That's a great name!")
+
+stage.wait(2)
+
+soccer_ans = sprite.ask("Do you like soccer?")
+
+soccer_ans = soccer_ans.lower()
+
+if soccer_ans == "yes":
+    stage.set_background("soccerfield")
+    sprite.say("I love soccer!")
+    ball = codesters.Sprite("soccerball")
+    stage.wait(2)
+    sprite.say("I like playing goalie!")
+
+else:
+    stage.set_background("halfcourt")
+    ball = codesters.Sprite("basketball")
+    sprite.set_say_color("white")
+    sprite.say("I prefer basketball!")
+stage.wait(2)
+
+sprite.say("Thanks for coming by!")
+
+ball.hide()
+
+
+
